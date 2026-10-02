@@ -92,7 +92,7 @@ with header_col:
 
 with button_col:
     send_disabled=len(st.session_state.messages)<1
-    if st.button("Send to Email",disabled=send_disabled,use_container_width=True):
+    if st.button("📤 Send to Email",disabled=send_disabled,use_container_width=True):
         with st.spinner("Summarizing your day..."):
             summary=ask_gemini([SUMMARY_REQUEST_PROMPT])
         success,info=send_email(st.session_state.email_address,st.session_state.name,summary)
